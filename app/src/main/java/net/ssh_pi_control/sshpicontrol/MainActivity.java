@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         t1 = (TextView) findViewById(R.id.textView);
-        t1.setText("asssssssssssssssss");
+        t1.setText("");
 
     }
 
@@ -39,13 +39,6 @@ public class MainActivity extends AppCompatActivity {
             protected Void doInBackground(Integer... params) {
                 try {
                     response = executeRemoteCommand("pi", "","192.168.8.105", 22);
-                    //t1.setText("output");
-                    //try{Thread.sleep(1000);}catch(Exception ee){}
-                    //TextView textView1_2 = (TextView)findViewById(R.id.textView);
-                    //textView1_2.setText(response);
-                    //textView1_2.setText("dead3");
-                    //view.invalidate();
-                    //t1.setText("done");
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -54,16 +47,10 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             protected void onPostExecute(Void unused) {
-                //TextView textView1_2 = (TextView)findViewById(R.id.textView);
-                //textView1_2.setText(response);
-                //textView1_2.setText("dead2");
                 t1.setText(response);
             }
 
         }.execute(1);
-
-        //t1.setText("dead");
-
     }
 
     public String executeRemoteCommand(String username,String password,String hostname,int port)
@@ -92,35 +79,15 @@ public class MainActivity extends AppCompatActivity {
 
         String responseString = new String(responseStream.toByteArray());
 
-        Log.i("asd", responseString);
-
-        //TextView txtView = findViewById(R.id.textView);
-        //txtView.setText(responseString);
-        //txtView.invalidate();
-        //t1.setText("working...");
-        //view.invalidate();
+        Log.i("response:", responseString);
 
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         channelssh.setOutputStream(baos);
 
-        //channelssh.setCommand("touch /home/pi/hello_moana");
-        //channelssh.setCommand("cd ~/python_scripts && python3 makefile.py");
-        //channelssh.setCommand("python3 makefile.py");
-
-        //channelssh.connect();
         session.disconnect();
         channelssh.disconnect();
 
-        //TextView txtView = findViewById(R.id.textView);
-        //txtView.setText("working done");
-
-
-        //return baos.toString();
         return responseString;
     }
 
-    //@Override
-    //protected void onPostExecute(Void unused) {
-
-    //}
 }
