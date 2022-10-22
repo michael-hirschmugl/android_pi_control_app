@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">ssh_pi_control</string>
+    <string name="top_text">Welcome to SSH PI Control App</string>
+    <string name="txtTextView1">00:00:00</string>
+    <string name="txtButton1">Clock Update</string>
+    <string name="txtButton2">write file</string>
+    <string name="txtTextView2">...</string>
+    <string name="txtSwitch1">Switch</string>
 </resources>
