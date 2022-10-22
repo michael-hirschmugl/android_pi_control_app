@@ -22,13 +22,13 @@
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
         android:id="@+id/button"
-        android:onClick="doIt" />
+        android:onClick="processButton1" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/TextViewButton1"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_centerHorizontal="true"
-        android:text="TextView" />
+        android:text="" />
 
 </RelativeLayout>

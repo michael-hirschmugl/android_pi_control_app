@@ -20,25 +20,31 @@ public class MainActivity extends AppCompatActivity {
 
     TextView t1;
     String response;
+    String user = "pi";
+    String pass = "";
+    String hostname = "192.168.8.105";
+    Integer port = 22;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        t1 = (TextView) findViewById(R.id.textView);
+        t1 = (TextView) findViewById(R.id.TextViewButton1);
         t1.setText("");
 
     }
 
     @SuppressLint("StaticFieldLeak")
-    public void doIt (View view) {
+    public void processButton1 (View view) {
+
+        String command = "date +%T";
 
         new AsyncTask<Integer, Void, Void>() {
             @Override
             protected Void doInBackground(Integer... params) {
                 try {
-                    response = executeRemoteCommand("pi", "","192.168.8.105", 22);
+                    response = executeRemoteCommand(user, pass,hostname, port, command);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -53,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
         }.execute(1);
     }
 
-    public String executeRemoteCommand(String username,String password,String hostname,int port)
+    public String executeRemoteCommand(String username,String password,String hostname,int port, String command)
             throws Exception {
 
         JSch jsch = new JSch();
@@ -67,8 +73,9 @@ public class MainActivity extends AppCompatActivity {
         session.connect();
 
         ChannelExec channelssh = (ChannelExec) session.openChannel("exec");
-        channelssh.setCommand("date +%T");
+        //channelssh.setCommand("date +%T");
         //channelssh.setCommand("cd ~/python_scripts && python3 makefile.py");
+        channelssh.setCommand(command);
         ByteArrayOutputStream responseStream = new ByteArrayOutputStream();
         channelssh.setOutputStream(responseStream);
         channelssh.connect();
