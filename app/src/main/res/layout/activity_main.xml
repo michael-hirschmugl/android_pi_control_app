@@ -79,5 +79,56 @@
             android:textStyle="normal"
             tools:ignore="UseSwitchCompatOrMaterialXml" />
 
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="380dp"
+            android:layout_gravity="start"
+            android:layout_marginStart="10dp"
+            android:text="@string/txtButton3"
+            android:textSize="11sp"
+            android:textStyle="normal"
+            android:textAlignment="center"
+            android:onClick="processButton3"
+            tools:ignore="RtlCompat" />
+
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="480dp"
+            android:layout_gravity="start"
+            android:layout_marginStart="10dp"
+            android:text="@string/txtButton4"
+            android:textSize="11sp"
+            android:textStyle="normal"
+            android:textAlignment="center"
+            android:onClick="processButton4"
+            tools:ignore="RtlCompat" />
+
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="430dp"
+            android:layout_gravity="start"
+            android:layout_marginStart="10dp"
+            android:text="@string/txtButton5"
+            android:textSize="11sp"
+            android:textStyle="normal"
+            android:textAlignment="center"
+            android:onClick="processButton5"
+            tools:ignore="RtlCompat" />
+
+        <TextView android:id="@+id/TextViewButton5"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="430dp"
+            android:layout_gravity="start"
+            android:layout_marginStart="180dp"
+            android:text="@string/txtTextView3"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            tools:ignore="RtlCompat" />
+
     </RelativeLayout>
 </ScrollView>

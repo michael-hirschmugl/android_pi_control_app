@@ -6,4 +6,8 @@
     <string name="txtButton2">write file</string>
     <string name="txtTextView2">...</string>
     <string name="txtSwitch1">Switch</string>
+    <string name="txtButton3">Pin 15 EIN</string>
+    <string name="txtButton4">Pin 15 AUS</string>
+    <string name="txtButton5">Pin 15 Status?</string>
+    <string name="txtTextView3">unbekannt</string>
 </resources>
